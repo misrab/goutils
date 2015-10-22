@@ -8,8 +8,8 @@ import (
 const (
 	MaxUintConst = ^uint(0) 
 	MinUintConst = 0 
-	MaxIntConst = int(MaxUint >> 1) 
-	MinIntConst = -MaxInt - 1
+	MaxIntConst = int(MaxUintConst >> 1) 
+	MinIntConst = -MaxIntConst - 1
 )
 
 
