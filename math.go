@@ -6,29 +6,29 @@ import (
 
 
 const (
-	MaxUint = ^uint(0) 
-	MinUint = 0 
-	MaxInt = int(MaxUint >> 1) 
-	MinInt = -MaxInt - 1
+	MaxUintConst = ^uint(0) 
+	MinUintConst = 0 
+	MaxIntConst = int(MaxUint >> 1) 
+	MinIntConst = -MaxInt - 1
 )
 
 
-func MinInts(x, y int) int {
+func MinInt(x, y int) int {
     if x < y {
         return x
     }
     return y
 }
-func MaxInts(x, y int) int {
+func MaxInt(x, y int) int {
     if x > y {
         return x
     }
     return y
 }
 
-func MinIntsSlice(s []int) int {
+func MinIntSlice(s []int) int {
 	N := len(s)
-	min := MaxInt
+	min := MaxIntConst
 
 	for i := 0; i < N; i++ {
 		if (s[i] < min) { min = s[i] }
@@ -36,9 +36,9 @@ func MinIntsSlice(s []int) int {
 
 	return min
 }
-func MaxIntsSlice(s []int) int {
+func MaxIntSlice(s []int) int {
 	N := len(s)
-	max := MinInt
+	max := MinIntConst
 	
 	for i := 0; i < N; i++ {
 		if (s[i] > max) { max = s[i] }
