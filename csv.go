@@ -1,3 +1,16 @@
+package utils
+
+import (
+	"os"
+	"io"
+	"log"
+	"strings"
+
+	"encoding/csv"
+)
+
+
+
 func isBlank(record []string) bool {
     count := 0
     for _, v := range record {
@@ -9,6 +22,14 @@ func isBlank(record []string) bool {
     if count > 0 { return true }
     return false
 }
+
+/*
+	- Reads csv file from path. Returns error if any.
+	- Passes records on to provided channel.
+	- Will screen blank records if screenBlank set to true. May
+	come at slight performance hit. 
+	rows x cols: O(rows) ==> O(rows x cols)
+*/
 func ReadCsv(path string, c chan []string, screenBlank bool, delimiter rune) error {
     // read from csv file
     file, err := os.Open(path)
