@@ -13,9 +13,9 @@ import (
 */
 
 type LinkPreview struct {
-	Title string
-	Description string
-	ImageUrl string // TODO
+	Title string `json:"title"`
+	Description string `json:"description"`
+	ImageUrl string `json:"image_url"` // TODO
 }
 
 /*
