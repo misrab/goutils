@@ -1,3 +1,5 @@
+// TODO: if url is pdf downlod and check meta data
+
 package utils
 
 import (
